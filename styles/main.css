@@ -1,0 +1,115 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.container {
+  max-width: 1440px;
+  padding: 0 15px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+}
+.row.between {
+  justify-content: space-between;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  height: 64px;
+  align-items: center;
+  background-color: #1976d2;
+  color: #fff;
+}
+.header .logo {
+  text-transform: capitalize;
+  font-size: 32px;
+  user-select: none;
+}
+.header .menu .nav-list {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+.header .menu .nav-list-item {
+  padding: 8px 20px;
+  font-size: 20px;
+  border-radius: 5px;
+}
+.header .menu .nav-list-item:hover {
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.main .section {
+  margin-bottom: 50px;
+  /*you can uncomment this if you need*/
+  /*scroll-margin-top: 64px;*/
+}
+.main .section .container {
+  max-width: 1140px;
+}
+.main .section .title {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+.main .section .content {
+  text-indent: 2em;
+  line-height: 1.5;
+  font-size: 20px;
+}
+
+.scroll-top-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  position: fixed;
+  right: 100px;
+  bottom: 60px;
+  box-shadow: 0 1px 8px rgba(10, 16, 20, 0.15), 0 0 8px rgba(10, 16, 20, 0.12);
+  transition: box-shadow 0.2s linear;
+  visibility: hidden;
+}
+.scroll-top-btn.visible {
+  visibility: visible;
+}
+.scroll-top-btn:before, .scroll-top-btn:after {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  content: "";
+  width: 20px;
+  height: 4px;
+  background-color: #cccccc;
+  border-radius: 2px;
+  transform: translate(-14px, -50%) rotate(-57deg);
+  transition: background-color 0.2s linear, box-shadow 0.2s linear;
+}
+.scroll-top-btn:after {
+  transform: translate(-5px, -50%) rotate(57deg);
+}
+.scroll-top-btn:hover {
+  cursor: pointer;
+  box-shadow: none;
+}
+.scroll-top-btn:hover:before, .scroll-top-btn:hover:after {
+  background-color: #1976d2;
+}
+
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,134 @@
+$blueColor: #1976d2;
+$greyColor: #cccccc;
+
+$headerHeight: 64px;
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.container {
+  max-width: 1440px;
+  padding: 0 15px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+
+  &.between {
+    justify-content: space-between;
+  }
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  height: $headerHeight;
+  align-items: center;
+  background-color: $blueColor;
+  color: #fff;
+
+  .logo {
+    text-transform: capitalize;
+    font-size: 32px;
+    user-select: none;
+  }
+
+  .menu {
+    .nav-list {
+      display: flex;
+      align-items: center;
+      height: 100%;
+
+      &-item {
+        padding: 8px 20px;
+        font-size: 20px;
+        border-radius: 5px;
+
+        &:hover {
+          cursor: pointer;
+          background: hsla(0, 0%, 100%, .15);
+        }
+      }
+    }
+  }
+}
+
+.main {
+  .section {
+    margin-bottom: 50px;
+    scroll-margin-top: $headerHeight;
+
+    .container {
+      max-width: 1140px;
+    }
+
+    .title {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+    .content {
+      text-indent: 2em;
+      line-height: 1.5;
+      font-size: 20px;
+    }
+  }
+}
+
+.scroll-top-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  position: fixed;
+  right: 100px;
+  bottom: 60px;
+  box-shadow: 0 1px 8px rgb(10 16 20 / 15%), 0 0 8px rgb(10 16 20 / 12%);
+  transition: box-shadow .2s linear;
+  visibility: hidden;
+
+  &.visible {
+    visibility: visible;
+  }
+
+  &:before, &:after {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    content: '';
+    width: 20px;
+    height: 4px;
+    background-color: $greyColor;
+    border-radius: 2px;
+    transform: translate(-14px, -50%) rotate(-57deg);
+    transition: background-color .2s linear, box-shadow .2s linear;
+  }
+
+  &:after {
+    transform: translate(-5px, -50%) rotate(57deg);
+  }
+
+  &:hover {
+    cursor: pointer;
+    box-shadow: none;
+
+    &:before, &:after {
+      background-color: $blueColor;
+    }
+  }
+}
