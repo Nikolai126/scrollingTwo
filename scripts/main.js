@@ -1,6 +1,7 @@
 const title_height = 64;
+const userHeight = 270;
 
-linklist.addEventListener('click', function(event) {
+this.addEventListener('click', function(event) {
   let element = document.getElementById(event.target.dataset.section).offsetTop;
   window.scrollTo({
     top: element - title_height,
@@ -14,7 +15,7 @@ linklist.addEventListener('click', function(event) {
 window.onscroll = function() {
   const scrolled = window.pageYOffset;
   console.log(scrolled)
-  if (scrolled > 270) {
+  if (scrolled > userHeight) {
         document.getElementById('scroll-top').classList.add('visible'); 
   } 
   else {
